@@ -129,13 +129,7 @@ class _LoginAdminState extends State<LoginAdmin> {
                   },
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'forget password?',
-                  style: TextStyle(color: Colors.white, fontSize: 18),
-                ),
-              ),
+            
               SizedBox(
                 height: 20.0,
               ),

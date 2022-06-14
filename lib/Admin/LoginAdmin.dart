@@ -45,6 +45,8 @@ class _LoginAdminState extends State<LoginAdmin> {
             image: DecorationImage(
               image: NetworkImage(LoginUserWallpaper),
               fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.2), BlendMode.darken),
             ),
           ),
           child: Column(
@@ -53,23 +55,6 @@ class _LoginAdminState extends State<LoginAdmin> {
                 padding: const EdgeInsets.all(48.0),
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          'Fitness Locator ',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 35,
-                              color: Colors.white),
-                        ),
-                        //  Container(
-                        //    child: Image(image:
-                        //    AssetImage( "assets/images/hey.jpg"),
-                        //    height: 35,),
-                        //  )
-                      ],
-                    ),
                     Padding(
                       padding: const EdgeInsets.only(
                         top: 90,
@@ -129,7 +114,6 @@ class _LoginAdminState extends State<LoginAdmin> {
                   },
                 ),
               ),
-            
               SizedBox(
                 height: 20.0,
               ),

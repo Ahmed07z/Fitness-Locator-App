@@ -1,18 +1,23 @@
-import 'package:fitnesslocator/User/LoginUser.dart';
-import 'package:fitnesslocator/User/socialfeed.dart';
+import 'package:fitnesslocator/GymOwner/ApprovedPromotions.dart';
+import 'package:fitnesslocator/GymOwner/GymProfile.dart';
+import 'package:fitnesslocator/GymOwner/RequestPromotion.dart';
+import 'package:fitnesslocator/home.dart';
 import 'package:flutter/material.dart';
 
-class HomeUser extends StatefulWidget {
+class HomeGymOwner extends StatefulWidget {
   @override
-  State<HomeUser> createState() => _HomeUserState();
+  State<HomeGymOwner> createState() => _HomeGymOwnerState();
 }
 
-class _HomeUserState extends State<HomeUser> {
+class _HomeGymOwnerState extends State<HomeGymOwner> {
   int currentIndex = 0;
 
   final screens = [
-    SocialFeed(),
-    Scaffold(),
+    gymProfle(
+      gymProfileId: '${gSignIn.currentUser?.id}',
+    ),
+    requestPromotion(),
+    ApprovedPromotion()
   ];
 
   @override
@@ -23,7 +28,7 @@ class _HomeUserState extends State<HomeUser> {
           body: screens[currentIndex],
           bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
-            backgroundColor: Colors.black,
+            backgroundColor: Colors.lightBlue[900],
             selectedItemColor: Colors.white,
             unselectedItemColor: Colors.blueGrey,
             iconSize: 35,
@@ -37,8 +42,12 @@ class _HomeUserState extends State<HomeUser> {
                 label: 'Home',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.announcement_outlined),
-                label: 'Promotions',
+                icon: Icon(Icons.add),
+                label: 'Create Promo',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.task_alt_rounded),
+                label: 'Promos',
               )
             ],
           )),

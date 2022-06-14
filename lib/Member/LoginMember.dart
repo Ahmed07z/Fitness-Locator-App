@@ -1,23 +1,24 @@
-import 'package:fitnesslocator/FitnessOwner/HomeOwner.dart';
+import 'package:fitnesslocator/GymOwner/HomeOwner.dart';
+import 'package:fitnesslocator/Member/HomeMember.dart';
 import 'package:fitnesslocator/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 
-class LoginOwner extends StatefulWidget {
-  LoginOwner({Key? key}) : super(key: key);
+class LoginMember extends StatefulWidget {
+  LoginMember({Key? key}) : super(key: key);
 
   @override
-  State<LoginOwner> createState() => _LoginOwnerState();
+  State<LoginMember> createState() => _LoginOwnerState();
 }
 
-class _LoginOwnerState extends State<LoginOwner> {
+class _LoginOwnerState extends State<LoginMember> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         extendBodyBehindAppBar: true,
         backgroundColor: Colors.grey,
         appBar: AppBar(
-          title: Text('Owner SignIn'),
+          title: Text('User SignIn'),
           backgroundColor: Colors.transparent,
           leading: IconButton(
             icon: Icon(Icons.arrow_back_ios),
@@ -43,8 +44,10 @@ class _LoginOwnerState extends State<LoginOwner> {
                     Buttons.Google,
                     text: "Signin with Google",
                     onPressed: () {
-                      Navigator?.push(context,
-                          MaterialPageRoute(builder: (context) => HomeOwner()));
+                      Navigator?.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomeMember()));
                     },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(18.0),

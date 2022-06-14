@@ -1,4 +1,3 @@
-import 'package:fitnesslocator/User/LoginUser.dart';
 import 'package:fitnesslocator/home.dart';
 import 'package:flutter/material.dart';
 
@@ -8,9 +7,9 @@ class SocialFeed extends StatefulWidget {
 }
 
 class _SocialFeedState extends State<SocialFeed> {
-  logOutUser() {
-    gSignIn.signOut();
-  }
+  // logOutUser() {
+  //   gSignIn.signOut();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,7 @@ class _SocialFeedState extends State<SocialFeed> {
               Container(
                 child: TextButton(
                     onPressed: () {
-                      logOutUser();
+                      // logOutUser();
                       Navigator?.push(context,
                           MaterialPageRoute(builder: (context) => home()));
                     },
@@ -32,11 +31,12 @@ class _SocialFeedState extends State<SocialFeed> {
                       style: TextStyle(fontSize: 25.0),
                     )),
               ),
-              CircleAvatar(
-                minRadius: 150.0,
-                backgroundImage: NetworkImage(currentUser!['photoUrl']),
-              ),
-              Text(currentUser!['profileName'])
+              // CircleAvatar(
+              //   minRadius: 150.0,
+              //   backgroundImage:
+              //       NetworkImage(gSignIn.currentUser!.photoUrl.toString()),
+              // ),
+              Text("Test")
             ],
           ),
         ),
